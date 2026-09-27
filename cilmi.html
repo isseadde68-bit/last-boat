@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abshir Bacadle | Suugaanta Soomaaliyeed</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #123c35;
+            --green-light: #1d5b4f;
+            --gold: #c79b52;
+            --gold-light: #e0bd7b;
+            --cream: #f7f3e9;
+            --white: #ffffff;
+            --dark: #101b18;
+            --text: #39443f;
+            --muted: #74807a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+
+            height: 76px;
+            padding: 0 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(18, 60, 53, .97);
+            box-shadow: 0 5px 25px rgba(0,0,0,.12);
+        }
+
+        .logo {
+            color: var(--gold-light);
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 720px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 31, 27, .96) 0%,
+                    rgba(8, 31, 27, .82) 45%,
+                    rgba(8, 31, 27, .35) 100%
+                ),
+                url("https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            padding: 90px 7%;
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            color: var(--gold-light);
+
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+
+            border-left: 3px solid var(--gold);
+
+            padding-left: 14px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 9vw, 105px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 20px;
+            color: #e6eee9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 27px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: #15251f;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid #d9c18e;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--green);
+        }
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            background: white;
+            padding: 90px 7%;
+        }
+
+        .intro-container {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .intro-image {
+            height: 500px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,.15);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-label {
+            color: var(--gold);
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .intro h2 {
+            font-size: 48px;
+            color: var(--green);
+            line-height: 1.15;
+            margin: 10px 0 20px;
+        }
+
+        .intro p {
+            color: var(--muted);
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        .quote {
+            border-left: 4px solid var(--gold);
+            background: #f8f5ed;
+            padding: 18px 22px;
+            color: #526059;
+            font-style: italic;
+            margin-top: 25px;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            background: var(--green);
+            color: white;
+            padding: 55px 7%;
+        }
+
+        .stats-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .stat h3 {
+            color: var(--gold-light);
+            font-size: 40px;
+        }
+
+        .stat p {
+            font-family: Arial, sans-serif;
+            color: #d1ded9;
+            font-size: 14px;
+        }
+
+        /* ================= POEMS ================= */
+
+        .poems {
+            padding: 100px 7%;
+            background: var(--cream);
+        }
+
+        .heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px;
+        }
+
+        .heading h2 {
+            color: var(--green);
+            font-size: 48px;
+            margin: 8px 0;
+        }
+
+        .heading p {
+            color: var(--muted);
+        }
+
+        .search {
+            max-width: 700px;
+            margin: 0 auto 45px;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 18px 22px;
+
+            border: 1px solid #ddd4c4;
+            border-radius: 8px;
+
+            outline: none;
+            background: white;
+
+            font-size: 16px;
+        }
+
+        .search input:focus {
+            border-color: var(--gold);
+        }
+
+        .poem-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .poem-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+
+            box-shadow: 0 10px 35px rgba(22,50,43,.08);
+
+            transition: .3s;
+        }
+
+        .poem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(22,50,43,.15);
+        }
+
+        .poem-image {
+            height: 210px;
+            overflow: hidden;
+        }
+
+        .poem-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .poem-card:hover .poem-image img {
+            transform: scale(1.06);
+        }
+
+        .poem-body {
+            padding: 28px;
+        }
+
+        .poem-number {
+            color: var(--gold);
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .poem-body h3 {
+            color: var(--green);
+            font-size: 25px;
+            margin: 8px 0;
+        }
+
+        .poem-body p {
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .read-btn {
+            border: none;
+            background: var(--green);
+            color: white;
+            padding: 11px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .read-btn:hover {
+            background: var(--green-light);
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            padding: 100px 7%;
+            background: white;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            grid-template-rows: 250px 250px;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            background: var(--dark);
+            color: white;
+            padding: 100px 7%;
+        }
+
+        .feature-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 10px;
+            background: rgba(255,255,255,.03);
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: var(--gold-light);
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #aebbb5;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #08100e;
+            color: #87918d;
+            padding: 55px 7%;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        footer h2 {
+            color: var(--gold-light);
+            font-family: Georgia, serif;
+            margin-bottom: 10px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* ================= MODAL ================= */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0,0,0,.78);
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            width: min(850px, 100%);
+            max-height: 88vh;
+            overflow-y: auto;
+
+            background: #fffdf8;
+
+            border-radius: 12px;
+            padding: 45px;
+
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+
+            font-size: 35px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .modal-content h2 {
+            color: var(--green);
+            font-size: 35px;
+            margin-bottom: 5px;
+        }
+
+        .modal-author {
+            color: var(--gold);
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .poem-text {
+            white-space: pre-line;
+            font-size: 20px;
+            line-height: 2.2;
+            color: #3f4843;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 950px) {
+
+            .poem-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .intro-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 250px 250px 250px;
+            }
+
+            .gallery-item:first-child {
+                grid-row: span 1;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 650px;
+                padding: 70px 5%;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .intro,
+            .poems,
+            .gallery,
+            .features {
+                padding: 70px 5%;
+            }
+
+            .intro-image {
+                height: 350px;
+            }
+
+            .intro h2,
+            .heading h2 {
+                font-size: 36px;
+            }
+
+            .poem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 230px);
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 35px 22px;
+            }
+
+            .poem-text {
+                font-size: 17px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        Abshir <span>Bacadle</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Taariikh</a></li>
+        <li><a href="#poems">Gabayada</a></li>
+        <li><a href="#gallery">Sawirro</a></li>
+        <li><a href="#contact">Xog</a></li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            SUUGAANTA SOOMAALIYEED
+        </div>
+
+        <h1>
+            Abshir <span>Bacadle</span>
+        </h1>
+
+        <p>
+            Kayd dijitaal ah oo loogu talagalay
+            suugaanta, gabayada iyo qoraallada
+            la xiriira Abshir Bacadle.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#poems" class="btn btn-gold">
+                Akhri Gabayada
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                Wax Ka Baro
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="intro" id="about">
+
+    <div class="intro-container">
+
+        <div class="intro-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=85"
+                alt="Buugaag iyo suugaan">
+
+        </div>
+
+
+        <div>
+
+            <div class="section-label">
+                HAL-ABUUR
+            </div>
+
+            <h2>
+                Abshir Bacadle
+            </h2>
+
+            <p>
+                Abshir Bacadle waa magac lagu xuso
+                suugaanta Soomaaliyeed. Website-kan
+                waxaa loogu talagalay in lagu habeeyo
+                xogta iyo qoraallada suugaanta qaab
+                dijitaal ah.
+            </p>
+
+            <p>
+                Ujeeddadu waa in akhristuhu helo meel
+                uu si fudud uga raadin karo, ugana
+                akhrisan karo qoraallada suugaanta.
+            </p>
+
+            <div class="quote">
+                “Suugaantu waa xusuus, dhaqan iyo
+                dhaxal jiilba jiil loo gudbiyo.”
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <h3>01</h3>
+            <p>Kayd Suugaan</p>
+        </div>
+
+        <div class="stat">
+            <h3>06</h3>
+            <p>Qaybo Gabay</p>
+        </div>
+
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Digital Archive</p>
+        </div>
+
+        <div class="stat">
+            <h3>SO</h3>
+            <p>Luqadda Soomaaliga</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= POEMS ================= -->
+
+<section class="poems" id="poems">
+
+    <div class="heading">
+
+        <div class="section-label">
+            SUUGAANTA
+        </div>
+
+        <h2>
+            Gabayada
+        </h2>
+
+        <p>
+            Raadi gabayga aad rabto, kadibna
+            dooro “Akhri Gabayga”.
+        </p>
+
+    </div>
+
+
+    <div class="search">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎  Raadi gabay..."
+        >
+
+    </div>
+
+
+    <div
+        class="poem-grid"
+        id="poemGrid">
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery" id="gallery">
+
+    <div class="heading">
+
+        <div class="section-label">
+            GALLERY
+        </div>
+
+        <h2>
+            Dunida Suugaanta
+        </h2>
+
+        <p>
+            Sawirro muujinaya buugaagta, qoraalka
+            iyo dhaqanka akhriska.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+
+            <img
+                src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1200&q=85"
+                alt="Buugaag">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85"
+                alt="Library">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=85"
+                alt="Library books">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85"
+                alt="Books">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="https://images.unsplash.com/photo-1455885666463-7c2e5c4b1c1a?auto=format&fit=crop&w=900&q=85"
+                alt="Writing">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features" id="contact">
+
+    <div class="heading">
+
+        <div
+            class="section-label"
+            style="color:#d7ad61;">
+
+            WEBSITE-KA
+
+        </div>
+
+        <h2 style="color:white;">
+            Kayd Dijitaal
+        </h2>
+
+        <p style="color:#aebbb5;">
+            Website loogu talagalay akhriska
+            iyo kaydinta suugaanta.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📖
+            </div>
+
+            <h3>
+                Akhris Fudud
+            </h3>
+
+            <p>
+                Gabay kasta waxaad ka furan kartaa
+                hal meel oo si nadiif ah loo akhriyo.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🔎
+            </div>
+
+            <h3>
+                Search
+            </h3>
+
+            <p>
+                Magaca gabayga ku qor search-ka
+                si aad si degdeg ah ugu hesho.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📚
+            </div>
+
+            <h3>
+                Kayd Suugaan
+            </h3>
+
+            <p>
+                Qoraallada suugaanta waxaa lagu
+                diyaarin karaa qaab dijitaal ah.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>
+        Abshir Bacadle
+    </h2>
+
+    <p>
+        Kaydka Suugaanta Soomaaliyeed
+    </p>
+
+    <br>
+
+    <p>
+        © 2026
+        <strong>Abshir Bacadle Archive</strong>
+    </p>
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+    class="modal"
+    id="poemModal">
+
+    <div class="modal-content">
+
+        <span
+            class="close"
+            id="closeModal">
+
+            &times;
+
+        </span>
+
+
+        <h2 id="modalTitle"></h2>
+
+        <div class="modal-author">
+            Abshir Bacadle — Kaydka Suugaanta
+        </div>
+
+        <div
+            class="poem-text"
+            id="modalText">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    const poems = [
+
+        {
+            id: 1,
+
+            title: "Gabayga Koowaad",
+
+            description:
+                "Qaybta koowaad ee kaydka suugaanta.",
+
+            image:
+                "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85",
+
+            text:
+`Halkan geli qoraalka saxda ah ee gabayga.
+
+Sadar kasta waxaad ku kala qori kartaa
+line cusub.
+
+Marka aad haysato gabayga saxda ah,
+qoraalkan tusaalaha ah waad beddeli kartaa.`
+        },
+
+
+        {
+            id: 2,
+
+            title: "Gabayga Labaad",
+
+            description:
+                "Qoraal loogu talagalay qaybta labaad.",
+
+            image:
+                "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85",
+
+            text:
+`Halkan geli qoraalka saxda ah
+ee gabayga labaad.
+
+Website-ku wuxuu si toos ah
+ugu soo bandhigi doonaa modal-ka.`
+        },
+
+
+        {
+            id: 3,
+
+            title: "Gabayga Saddexaad",
+
+            description:
+                "Qaybta saddexaad ee kaydka.",
+
+            image:
+                "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85",
+
+            text:
+`Halkan geli qoraalka saxda ah
+ee gabayga saddexaad.
+
+Waxaad ku dari kartaa inta sadar
+ee gabaygaagu leeyahay.`
+        },
+
+
+        {
+            id: 4,
+
+            title: "Gabayga Afraad",
+
+            description:
+                "Qaybta afraad ee suugaanta.",
+
+            image:
+                "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=85",
+
+            text:
+`Halkan geli qoraalka saxda ah
+ee gabayga afraad.`
+        },
+
+
+        {
+            id: 5,
+
+            title: "Gabayga Shanaad",
+
+            description:
+                "Qaybta shanaad ee kaydka.",
+
+            image:
+                "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85",
+
+            text:
+`Halkan geli qoraalka saxda ah
+ee gabayga shanaad.`
+        },
+
+
+        {
+            id: 6,
+
+            title: "Gabayga Lixaad",
+
+            description:
+                "Qaybta lixaad ee kaydka.",
+
+            image:
+                "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=85",
+
+            text:
+`Halkan geli qoraalka saxda ah
+ee gabayga lixaad.`
+        }
+
+    ];
+
+
+    /* ================= ELEMENTS ================= */
+
+    const poemGrid =
+        document.getElementById("poemGrid");
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const modal =
+        document.getElementById("poemModal");
+
+    const modalTitle =
+        document.getElementById("modalTitle");
+
+    const modalText =
+        document.getElementById("modalText");
+
+    const closeModal =
+        document.getElementById("closeModal");
+
+
+    /* ================= DISPLAY ================= */
+
+    function displayPoems(list) {
+
+        poemGrid.innerHTML = "";
+
+
+        if (list.length === 0) {
+
+            poemGrid.innerHTML = `
+                <p style="
+                    grid-column:1/-1;
+                    text-align:center;
+                    font-size:20px;
+                    color:#74807a;
+                ">
+                    Gabayga lama helin.
+                </p>
+            `;
+
+            return;
+        }
+
+
+        list.forEach(function(poem) {
+
+            const card =
+                document.createElement("article");
+
+            card.className = "poem-card";
+
+
+            card.innerHTML = `
+
+                <div class="poem-image">
+
+                    <img
+                        src="${poem.image}"
+                        alt="${poem.title}"
+                    >
+
+                </div>
+
+                <div class="poem-body">
+
+                    <div class="poem-number">
+                        GABAY ${String(poem.id).padStart(2,"0")}
+                    </div>
+
+                    <h3>
+                        ${poem.title}
+                    </h3>
+
+                    <p>
+                        ${poem.description}
+                    </p>
+
+                    <button class="read-btn">
+                        Akhri Gabayga →
+                    </button>
+
+                </div>
+
+            `;
+
+
+            card
+                .querySelector(".read-btn")
+                .addEventListener(
+                    "click",
+                    function() {
+
+                        openPoem(poem);
+
+                    }
+                );
+
+
+            poemGrid.appendChild(card);
+
+        });
+
+    }
+
+
+    /* ================= SEARCH ================= */
+
+    searchInput.addEventListener(
+        "input",
+        function() {
+
+            const value =
+                searchInput.value
+                .toLowerCase()
+                .trim();
+
+
+            const filtered =
+                poems.filter(function(poem) {
+
+                    return (
+
+                        poem.title
+                        .toLowerCase()
+                        .includes(value)
+
+                        ||
+
+                        poem.description
+                        .toLowerCase()
+                        .includes(value)
+
+                    );
+
+                });
+
+
+            displayPoems(filtered);
+
+        }
+    );
+
+
+    /* ================= OPEN ================= */
+
+    function openPoem(poem) {
+
+        modalTitle.textContent =
+            poem.title;
+
+        modalText.textContent =
+            poem.text;
+
+        modal.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+
+    /* ================= CLOSE ================= */
+
+    function closePoem() {
+
+        modal.classList.remove("show");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    closeModal.addEventListener(
+        "click",
+        closePoem
+    );
+
+
+    modal.addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === modal) {
+
+                closePoem();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Escape") {
+
+                closePoem();
+
+            }
+
+        }
+    );
+
+
+    /* ================= START ================= */
+
+    displayPoems(poems);
+
+</script>
+
+</body>
+</html>
